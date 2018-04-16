@@ -1,0 +1,16 @@
+version: '2'
+services:
+  app:
+    build:
+      context: ./
+    environment:
+      - EMAIL_TARGET=${EMAIL_TARGET}
+      - CURRENCIES=${CURRENCIES}
+    volumes:
+      - ./:/crypto-ticker/
+    ports:
+      - "3100:3100"
+
+volumes:
+  timecapsule-mysqldata:
+    driver: "local"
