@@ -6,6 +6,8 @@ services:
     environment:
       - EMAIL_TARGET=${EMAIL_TARGET}
       - CURRENCIES=${CURRENCIES}
+      - MAILGUN_KEY=${MAILGUN_KEY}
+      - MAILGUN_DOMAIN=${MAILGUN_DOMAIN}
     volumes:
       - ./:/crypto-ticker/
     ports:
