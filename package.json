@@ -1,0 +1,8 @@
+{
+  "name": "crypto-ticker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:samthomson/crypto-ticker.git",
+  "author": "Sam Thomson <samt@samt.st>",
+  "license": "MIT"
+}
