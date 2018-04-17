@@ -12,9 +12,17 @@ console.log('EMAIL_TARGET', EMAIL_TARGET)
 console.log('CURRENCIES', CURRENCIES)
 
 const dryrun = async () => {
-    const resultsCMCCurrencySnapshot:number = await getCryptoUSDValue(CURRENCIES || '') || -1
+    const result:number = await getCryptoUSDValue(CURRENCIES || '') || -1
 
-    const literalPrice: string = `${CURRENCIES} value is $${resultsCMCCurrencySnapshot}`
+    var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    });
+      
+      const formattedDollarAmmount: string = formatter.format(result); /* $2,500.00 */
+
+    const literalPrice: string = `${CURRENCIES} value is ${formattedDollarAmmount}`
 
     const mailgunInstance = mailgun({
         apiKey: MAILGUN_KEY || '',
