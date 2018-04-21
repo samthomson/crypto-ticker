@@ -11,7 +11,7 @@ const {
 console.log('EMAIL_TARGET', EMAIL_TARGET)
 console.log('CURRENCIES', CURRENCIES)
 
-const dryrun = async () => {
+const once = async () => {
     const result:number = await getCryptoUSDValue(CURRENCIES || '') || -1
 
     var formatter = new Intl.NumberFormat('en-US', {
@@ -46,4 +46,4 @@ const dryrun = async () => {
     })
 }
 
-dryrun()
+once()
