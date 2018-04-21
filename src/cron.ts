@@ -3,7 +3,7 @@ import {
 } from './lib'
 import { CronJob } from 'cron'
 
-var taskEveryMinute = new CronJob('* * * * *', function() {
+var taskEveryMinute = new CronJob('15 17 * * *', function() {
     // run every minute
     main()
 }, () => {}, true, 'Europe/London');
