@@ -9,7 +9,7 @@
     "build": "tsc",
     "fixlint": "tslint --fix src/**.*",
     "watch": "tsc --watch",
-    "dry-run": "node dist/dry-run.js"
+    "once": "node dist/once.js"
   },
   "devDependencies": {
     "@types/node": "^9.6.5",
