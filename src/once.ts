@@ -8,9 +8,6 @@ const {
     MAILGUN_KEY,
 } = process.env
 
-console.log('EMAIL_TARGET', EMAIL_TARGET)
-console.log('CURRENCIES', CURRENCIES)
-
 const once = async () => {
     const result:number = await getCryptoUSDValue(CURRENCIES || '') || -1
 
@@ -38,7 +35,7 @@ const once = async () => {
 
     mailgunInstance.messages().send(oMessageData, (err, body) => {
         if (body) {
-            console.log('mail sent Ok ', body)
+            console.log('mail sent Ok ')
         }
         if (err) {
             console.log('err sending mail, ', err)
