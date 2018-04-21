@@ -19,7 +19,7 @@ export const main = async () => {
       
     const formattedDollarAmmount: string = formatter.format(result); /* $2,500.00 */
 
-    const literalPrice: string = `${CURRENCIES} value is ${formattedDollarAmmount}`
+    const literalPrice: string = `${CURRENCIES} is at ${formattedDollarAmmount}`
 
     const mailgunInstance = mailgun({
         apiKey: MAILGUN_KEY || '',
