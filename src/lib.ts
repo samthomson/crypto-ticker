@@ -17,7 +17,7 @@ export const main = async () => {
         minimumFractionDigits: 2,
     });
       
-      const formattedDollarAmmount: string = formatter.format(result); /* $2,500.00 */
+    const formattedDollarAmmount: string = formatter.format(result); /* $2,500.00 */
 
     const literalPrice: string = `${CURRENCIES} value is ${formattedDollarAmmount}`
 
