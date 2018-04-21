@@ -26,7 +26,7 @@ export const main = async () => {
         domain: MAILGUN_DOMAIN || ''
     })
     const oMessageData: any = {
-        from: `crypto-ticker <noreply@email.address>`,
+        from: `crypto-ticker <noreply@fake.email>`,
         to: `${EMAIL_TARGET} <${EMAIL_TARGET}>`,
         subject: literalPrice,
         text: literalPrice,
