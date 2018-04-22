@@ -20,6 +20,7 @@
   "dependencies": {
     "@types/mailgun-js": "^0.16.0",
     "cron": "^1.3.0",
+    "currency-convert": "^1.0.0",
     "get-crypto-fiat-values": "^1.1.0",
     "mailgun-js": "^0.16.0"
   }
