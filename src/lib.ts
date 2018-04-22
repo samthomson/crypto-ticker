@@ -29,22 +29,20 @@ export const main = async () => {
         domain: MAILGUN_DOMAIN || ''
     })
 
-    console.log(literalPrice)
+    const oMessageData: any = {
+        from: `crypto-ticker <noreply@fake.email>`,
+        to: `${EMAIL_TARGET} <${EMAIL_TARGET}>`,
+        subject: literalPrice,
+        text: literalPrice,
+        html: literalPrice
+    }
 
-    // const oMessageData: any = {
-    //     from: `crypto-ticker <noreply@fake.email>`,
-    //     to: `${EMAIL_TARGET} <${EMAIL_TARGET}>`,
-    //     subject: literalPrice,
-    //     text: literalPrice,
-    //     html: literalPrice
-    // }
-
-    // mailgunInstance.messages().send(oMessageData, (err, body) => {
-    //     if (body) {
-    //         console.log('mail sent Ok ')
-    //     }
-    //     if (err) {
-    //         console.log('err sending mail, ', err)
-    //     }
-    // })
+    mailgunInstance.messages().send(oMessageData, (err, body) => {
+        if (body) {
+            console.log('mail sent Ok ')
+        }
+        if (err) {
+            console.log('err sending mail, ', err)
+        }
+    })
 }
