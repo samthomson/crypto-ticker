@@ -10,17 +10,19 @@ const {
 } = process.env
 
 export const main = async () => {
-    const result:number = await getCryptoUSDValue(CURRENCIES || '') || -1
+    const dollarAmount:number = await getCryptoUSDValue(CURRENCIES || '') || -1
 
     var formatter = new Intl.NumberFormat('en-US', {
         minimumFractionDigits: 2,
     })
       
 
-    const dkkAmount = await currencyConvert(result, 'USD', 'DKK')
-    const formattedAmmount: string = formatter.format(dkkAmount)
+    const dkkAmount = await currencyConvert(dollarAmount, 'USD', 'DKK')
+
+    const formattedDollarAmmount: string = formatter.format(dollarAmount)
+    const formattedKronerAmmount: string = formatter.format(dkkAmount)
     
-    const literalPrice: string = `${CURRENCIES} is at ${formattedAmmount} DKK`
+    const literalPrice: string = `${CURRENCIES} is at $${formattedDollarAmmount} (${formattedKronerAmmount} DKK)`
 
     const mailgunInstance = mailgun({
         apiKey: MAILGUN_KEY || '',
